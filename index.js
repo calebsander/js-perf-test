@@ -36,9 +36,8 @@ promisify(fs.readdir)('.')
 				console.log('\t' + testName + ':')
 				const test = tests[testName]
 				let times = 1, timeEstimate = 0
-				while (times * timeEstimate < TIME_THRESHOLD) { //make sure there is statistically significant runtime data
+				while (times * (timeEstimate = time(test, times)) < TIME_THRESHOLD) { //make sure there is statistically significant runtime data
 					times *= 10
-					timeEstimate = time(test, times)
 				}
 				console.log('\t\tEstimate:', timeEstimate, 'ms over', times, 'iterations')
 				const accurateTests = Math.ceil(TARGET_RUNTIME / timeEstimate)
