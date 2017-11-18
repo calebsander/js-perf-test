@@ -1,0 +1,19 @@
+{
+	"name": "perf-test",
+	"version": "1.0.0",
+	"description": "Performance tests for common JavaScript tasks",
+	"main": "index.js",
+	"scripts": {
+		"test": "node index.js"
+	},
+	"keywords": [
+		"performance",
+		"javascript",
+		"test"
+	],
+	"author": "Caleb Sander",
+	"license": "MIT",
+	"engines": {
+		"node": ">=8.0.0"
+	}
+}
