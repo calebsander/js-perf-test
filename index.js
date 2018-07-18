@@ -24,7 +24,7 @@ const shouldTest = suite => !suitesToTest.size || suitesToTest.has(suite)
 promisify(fs.readdir)('.')
 	.then(entries =>
 		entries
-			.filter(entry => entry.indexOf('.') === -1) //filter for directories
+			.filter(entry => !entry.includes('.')) //filter for directories
 			.filter(entry => shouldTest(path.resolve(entry)))
 	)
 	.then(entries => {
