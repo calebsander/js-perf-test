@@ -1,5 +1,9 @@
 const MAX = 10000
 
+function* range() {
+	for (let i = 0; i < MAX; i++) yield i
+}
+
 module.exports = {
 	index() {
 		const result = []
@@ -10,7 +14,10 @@ module.exports = {
 		for (let i = 0; i < MAX; i++) result.push(i)
 	},
 	map() { //not exactly a fair comparison, as this pre-allocs the entire array
-		const result = new Array(MAX).fill(0).map((_, i) => i)
+		const result = new Array(MAX).fill().map((_, i) => i)
+	},
+	generator() {
+		const result = Array.from(range())
 	},
 	unshift() { //just for shits and giggles
 		const result = []
