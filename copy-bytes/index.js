@@ -24,3 +24,4 @@ module.exports = {
 		return to
 	}
 }
+if (typeof BigUint64Array === 'undefined') delete module.exports.by64
