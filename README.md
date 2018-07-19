@@ -74,6 +74,7 @@ module.exports = {
 }
 ````
 
+Running `node index.js` will run all suites, but you can also specify the suites to run, e.g. `node index.js int-to-string string-to-int` will only run `int-to-string` and `string-to-int`.
 If your tests are running very fast (< 1 microsecond per execution), consider increasing the scale of the test (e.g. operating on longer arrays) to minimize the impact of testing overhead on performance.
 
 #
