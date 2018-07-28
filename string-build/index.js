@@ -7,6 +7,11 @@ module.exports = {
 		for (let i = 0; i < SEGMENTS; i++) str += strs[i]
 		return str
 	},
+	appendFront() {
+		let str = ''
+		for (let i = 0; i < SEGMENTS; i++) str = strs[i] + str
+		return str
+	},
 	join() {
 		const segments = []
 		for (let i = 0; i < SEGMENTS; i++) segments.push(strs[i])
